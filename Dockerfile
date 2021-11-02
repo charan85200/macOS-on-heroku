@@ -63,7 +63,7 @@ RUN chmod +x /app/expect_vnc.sh
 
 RUN echo xfce4-session >~/.xsession
 
-RUN git clone https://github.com/jamiehoszeyui/macOS-Simple-KVM
+RUN git clone https://github.com/jamiehoszeyui/macOS-Simple-KVM ./
 RUN bash jumpstart.sh --mojave
 RUN qemu-img create -f qcow2 MyDisk.qcow2 64G
 RUN HEADLESS=1 MEM=1G CPUS=2 SYSTEM_DISK=MyDisk.qcow2 ./headless.sh
